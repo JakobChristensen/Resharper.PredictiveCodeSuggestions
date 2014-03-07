@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<actions>
+  <insert group-id="ReSharper" position="last">
+    <action-group id="AutoTemplates" text="AutoTemplates">
+      <action id="PredictiveCodeSuggestions.AnalyzeSolution" text="Analyze" />
+    </action-group>
+  </insert>
+</actions>

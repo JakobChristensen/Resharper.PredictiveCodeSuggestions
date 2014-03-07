@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\JetBrains.ReSharper.SDK.8.2.1001-EAP\build\JetBrains.ReSharper.SDK.Props" Condition="Exists('packages\JetBrains.ReSharper.SDK.8.2.1001-EAP\build\JetBrains.ReSharper.SDK.Props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F4C51C70-9CE0-4BD3-BB43-DC6E058D379B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PredictiveCodeSuggestions</RootNamespace>
+    <AssemblyName>PredictiveCodeSuggestions</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>JET_MODE_ASSERT;DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\AnalyzeSolutionAction.cs" />
+    <Compile Include="Actions\AutoTemplateAction.cs" />
+    <Compile Include="Actions\AutoTemplateBulb.cs" />
+    <Compile Include="AutoTemplates\Analyzers\AssignmentAnalyzer.cs" />
+    <Compile Include="AutoTemplates\Analyzers\BlockStatementAnalyzer.cs" />
+    <Compile Include="AutoTemplates\Analyzers\ForeachAnalyzer.cs" />
+    <Compile Include="AutoTemplates\Analyzers\IfInvocationAnalyzer.cs" />
+    <Compile Include="AutoTemplates\Analyzers\IfNullAnalyzer.cs" />
+    <Compile Include="AutoTemplates\Analyzers\IfUnaryOperatorAnalyzer.cs" />
+    <Compile Include="AutoTemplates\Analyzers\InvocationAnalyzer.cs" />
+    <Compile Include="AutoTemplates\Analyzers\LocalVariableAnalyzer.cs" />
+    <Compile Include="AutoTemplates\Analyzers\StatementAnalyzer.cs" />
+    <Compile Include="AutoTemplates\Analyzers\UsingAnalyzer.cs" />
+    <Compile Include="AutoTemplates\AutoTemplate.cs" />
+    <Compile Include="AutoTemplates\AutoTemplateAnalyzer.cs" />
+    <Compile Include="AutoTemplates\AutoTemplateBuilder.cs" />
+    <Compile Include="AutoTemplates\AutoTemplateManager.cs" />
+    <Compile Include="AutoTemplates\AutoTemplateScope.cs" />
+    <Compile Include="AutoTemplates\Expressions\AsExpression.cs" />
+    <Compile Include="AutoTemplates\Expressions\BinaryExpression.cs" />
+    <Compile Include="AutoTemplates\Expressions\CastExpression.cs" />
+    <Compile Include="AutoTemplates\Expressions\CreationExpression.cs" />
+    <Compile Include="AutoTemplates\Expressions\ExpressionDescriptor.cs" />
+    <Compile Include="AutoTemplates\Expressions\ExpressionTemplateBuilder.cs" />
+    <Compile Include="AutoTemplates\Expressions\InvocationExpression.cs" />
+    <Compile Include="AutoTemplates\Expressions\IsExpression.cs" />
+    <Compile Include="AutoTemplates\Expressions\ParenthesizedExpression.cs" />
+    <Compile Include="AutoTemplates\Expressions\ReferenceExpression.cs" />
+    <Compile Include="AutoTemplates\Expressions\ThisExpression.cs" />
+    <Compile Include="AutoTemplates\Expressions\UnaryOperatorExpression.cs" />
+    <Compile Include="AutoTemplates\StatementDescriptor.cs" />
+    <Compile Include="AutoTemplates\Templates\BreakTemplate.cs" />
+    <Compile Include="AutoTemplates\Templates\ContinueTemplate.cs" />
+    <Compile Include="AutoTemplates\Templates\DoWhileTemplate.cs" />
+    <Compile Include="AutoTemplates\Templates\ForEachTemplate.cs" />
+    <Compile Include="AutoTemplates\Templates\IfTemplate.cs" />
+    <Compile Include="AutoTemplates\Templates\InvocationTemplate.cs" />
+    <Compile Include="AutoTemplates\Templates\LocalVariableTemplate.cs" />
+    <Compile Include="AutoTemplates\Templates\ReturnTemplate.cs" />
+    <Compile Include="AutoTemplates\Templates\StatementTemplate.cs" />
+    <Compile Include="AutoTemplates\Templates\TryCatchTemplate.cs" />
+    <Compile Include="AutoTemplates\Templates\TryFinallyTemplate.cs" />
+    <Compile Include="AutoTemplates\Templates\WhileTemplate.cs" />
+    <Compile Include="Diagnostics\CodeAnnotation.cs" />
+    <Compile Include="Extensions\StringExtensions\StringExtensions.cs" />
+    <Compile Include="Extensions\XElementExtensions\XElementExtensions.cs" />
+    <Compile Include="Extensions\XmlNodeExtensions\XmlNodeExtensions.cs" />
+    <Compile Include="Generators\AssignmentGenerator.cs" />
+    <Compile Include="Generators\AssignmentPopulator.cs" />
+    <Compile Include="Generators\FlowControlGenerator.cs" />
+    <Compile Include="Generators\FlowControlPopulator.cs" />
+    <Compile Include="Generators\GeneratorBase.cs" />
+    <Compile Include="Generators\GeneratorExtensions.cs" />
+    <Compile Include="Generators\GeneratorManager.cs" />
+    <Compile Include="Generators\GeneratorWrapper.cs" />
+    <Compile Include="Generators\IGeneratorPopulator.cs" />
+    <Compile Include="Generators\IteratorGenerator.cs" />
+    <Compile Include="Generators\IteratorPopulator.cs" />
+    <Compile Include="Generators\ReturnGenerator.cs" />
+    <Compile Include="Generators\ReturnPopulator.cs" />
+    <Compile Include="LiveTemplates\LiveTemplate.cs" />
+    <Compile Include="LiveTemplates\LiveTemplateManager.cs" />
+    <Compile Include="LiveTemplates\ScopeBase.cs" />
+    <Compile Include="LiveTemplates\ScopeInstance.cs" />
+    <Compile Include="Options\AutoTemplateSettings.cs" />
+    <Compile Include="Options\AutoTemplatesService.cs" />
+    <Compile Include="Options\Options.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options\Options.Designer.cs">
+      <DependentUpon>Options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\ResharperSettings.cs" />
+    <Compile Include="PopupMenus\PopupMenu.cs" />
+    <Compile Include="PopupMenus\PopupMenuItem.cs" />
+    <Compile Include="ProgressIndicators\ProgressIndicator.cs" />
+    <Compile Include="ProgressIndicators\ProgressWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressIndicators\ProgressWindow.Designer.cs">
+      <DependentUpon>ProgressWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shell\CompleteStatementContextAction.cs" />
+    <Compile Include="Shell\DataContext.cs" />
+    <Compile Include="Shell\DocumentEventHandler.cs" />
+    <Compile Include="Shell\GeneratorProvider.cs" />
+    <Compile Include="Shell\Loader.cs" />
+    <Compile Include="Shell\ShellManager.cs" />
+    <Compile Include="SmartGenerators\AutoTemplateGenerator.cs" />
+    <Compile Include="SmartGenerators\CreateLiveTemplateGenerator.cs" />
+    <Compile Include="SmartGenerators\LiveTemplateGenerator.cs" />
+    <Compile Include="SmartGenerators\ScopeManager.cs" />
+    <Compile Include="SmartGenerators\Scopes\AfterAssignmentExpressionScope.cs" />
+    <Compile Include="SmartGenerators\Scopes\AfterEnumerableScope.cs" />
+    <Compile Include="SmartGenerators\Scopes\AfterInvocationScope.cs" />
+    <Compile Include="SmartGenerators\Scopes\AfterLocalVariableDeclarationScope.cs" />
+    <Compile Include="SmartGenerators\Scopes\BeforeAssignmentExpressionScope.cs" />
+    <Compile Include="SmartGenerators\Scopes\BeforeInvocationScope.cs" />
+    <Compile Include="SmartGenerators\Scopes\BeforeLocalVariableDeclarationScope.cs" />
+    <Compile Include="SmartGenerators\Scopes\BeginningOfFunctionScope.cs" />
+    <Compile Include="SmartGenerators\Scopes\ClassMemberScope.cs" />
+    <Compile Include="SmartGenerators\Scopes\EmptyFileScope.cs" />
+    <Compile Include="SmartGenerators\Scopes\EndOfBlockScope.cs" />
+    <Compile Include="SmartGenerators\Scopes\InsideMethodScope.cs" />
+    <Compile Include="SmartGenerators\Scopes\InterfaceMemberScope.cs" />
+    <Compile Include="SmartGenerators\Scopes\StructMemberScope.cs" />
+    <Compile Include="SmartGenerators\Scopes\SwitchCaseScope.cs" />
+    <Compile Include="SmartGenerators\Scopes\TypeScope.cs" />
+    <Compile Include="SmartGenerators\SmartGeneratorPopulator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Actions.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\Options.resx">
+      <DependentUpon>Options.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressIndicators\ProgressWindow.resx">
+      <DependentUpon>ProgressWindow.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <ReSharperSdkTargets Condition=" '$(ReSharperSdkTargets)' == '' ">$(MSBuildExtensionsPath)\JetBrains\ReSharper.SDK\v8.0</ReSharperSdkTargets>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(ReSharperSdkTargets)\Plugin.Targets" />
+  <Import Project="packages\JetBrains.ReSharper.SDK.8.2.1001-EAP\build\JetBrains.ReSharper.SDK.Targets" Condition="Exists('packages\JetBrains.ReSharper.SDK.8.2.1001-EAP\build\JetBrains.ReSharper.SDK.Targets')" />
+</Project>
