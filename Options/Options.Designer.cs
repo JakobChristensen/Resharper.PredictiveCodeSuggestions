@@ -156,7 +156,7 @@
       this.listView1.Location = new System.Drawing.Point(31, 348);
       this.listView1.MultiSelect = false;
       this.listView1.Name = "listView1";
-      this.listView1.Size = new System.Drawing.Size(370, 231);
+      this.listView1.Size = new System.Drawing.Size(316, 231);
       this.listView1.TabIndex = 17;
       this.listView1.UseCompatibleStateImageBehavior = false;
       this.listView1.View = System.Windows.Forms.View.Details;
@@ -271,7 +271,7 @@
       this.Controls.Add(this.linkLabel1);
       this.Controls.Add(this.UsingLabel);
       this.Name = "Options";
-      this.Size = new System.Drawing.Size(433, 603);
+      this.Size = new System.Drawing.Size(362, 603);
       this.ResumeLayout(false);
       this.PerformLayout();
 

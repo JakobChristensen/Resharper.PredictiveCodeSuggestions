@@ -2,8 +2,8 @@
 
 <actions>
   <insert group-id="ReSharper" position="last">
-    <action-group id="AutoTemplates" text="AutoTemplates">
-      <action id="PredictiveCodeSuggestions.AnalyzeSolution" text="Analyze" />
+    <action-group id="AutoTemplates" text="Predictive Code Suggestions">
+      <action id="PredictiveCodeSuggestions.AnalyzeSolution" text="Analyze Solution" />
     </action-group>
   </insert>
 </actions>

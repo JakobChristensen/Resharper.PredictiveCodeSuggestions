@@ -14,8 +14,11 @@ namespace PredictiveCodeSuggestions.LiveTemplates
   using JetBrains.Annotations;
   using JetBrains.Application;
   using JetBrains.ProjectModel.DataContext;
+  using JetBrains.ReSharper.Daemon.CSharp.Errors;
   using JetBrains.ReSharper.Feature.Services.LiveTemplates.Hotspots;
   using JetBrains.ReSharper.Feature.Services.LiveTemplates.LiveTemplates;
+  using JetBrains.ReSharper.Feature.Services.LiveTemplates.Settings;
+  using JetBrains.ReSharper.LiveTemplates;
   using JetBrains.ReSharper.LiveTemplates.Templates;
   using PredictiveCodeSuggestions.Shell;
 
@@ -115,26 +118,27 @@ namespace PredictiveCodeSuggestions.LiveTemplates
         throw new ArgumentNullException("context");
       }
 
-      foreach (var templateField in this.InternalTemplate.Fields)
+      var liveTemplate = this.InternalTemplate.Text;
+      foreach (var parameter in this.Scope.Parameters)
       {
-        foreach (var parameter in this.Scope.Parameters)
-        {
-          if (templateField.Name == parameter.Key)
-          {
-            templateField.Expression = new TextHotspotExpression(new List<string>
-            {
-              parameter.Value
-            });
-          }
-        }
+        liveTemplate = liveTemplate.Replace("$" + parameter.Key + "$", parameter.Value);
       }
+
+      var template = new Template(string.Empty, string.Empty, liveTemplate, this.InternalTemplate.Reformat, this.InternalTemplate.ShortenQualifiedReferences, this.InternalTemplate.Invisible, this.InternalTemplate.Applicability);
+
+      foreach (var field in this.InternalTemplate.Fields)
+      {
+        template.Fields.Add(new TemplateField(field.Name, field.Expression, 0));
+      }
+
+
 
       var liveTemplateManager = Shell.Instance.GetComponent<LiveTemplatesManager>();
 
       var solution = context.InternalDataContext.GetData(DataConstants.SOLUTION);
       var textControl = context.InternalDataContext.GetData(JetBrains.TextControl.DataContext.DataConstants.TEXT_CONTROL);
 
-      var hotspotSession = liveTemplateManager.CreateHotspotSessionFromTemplate(this.InternalTemplate, solution, textControl);
+      var hotspotSession = liveTemplateManager.CreateHotspotSessionFromTemplate(template, solution, textControl);
       if (hotspotSession != null)
       {
         hotspotSession.Execute();

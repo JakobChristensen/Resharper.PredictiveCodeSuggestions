@@ -47,7 +47,7 @@ namespace PredictiveCodeSuggestions.SmartGenerators
       {
         yield return new LiveTemplateGenerator(template);
       }
-
+      
       foreach (var s in scopes)
       {
         var scope = s;

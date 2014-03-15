@@ -110,6 +110,7 @@ namespace PredictiveCodeSuggestions.LiveTemplates
       }
     }
 
+
     /// <summary>
     /// Gets the live templates.
     /// </summary>
