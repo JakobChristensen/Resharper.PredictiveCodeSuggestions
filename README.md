@@ -1,9 +1,8 @@
 Predictive Code Suggestions
 ===========================
-Predictive Code Suggestions is a plugin for JetBrains ReSharper, that helps you produce code by suggestion the next line of code.
+Predictive Code Suggestions is a plugin for JetBrains ReSharper, that helps you produce code by suggesting the next line of code.
 
 <h3>Idea</h3>
-
 When writing code there are often certain patterns to how the code is constructed. Some statements are often followed by certain other statements, functions called followed by checks.
 
 For instance, if a function can return null, you often want to check for null.
@@ -18,11 +17,24 @@ if (text == null)
 
 When you write a call to `Path.GetDirectoryName(...)` wouldn't it be nice, if ReSharper suggested that the next line should be a check for null.
 
-Predictive Code Suggestions attempts to do this.
+Predictive Code Suggestions attempts to do this:
 
 <img src="http://vsplugins.sitecore.net/downloads/github/pcs1.gif" alt="" />
 
+<h3>Benefits</h3>
+There are several benefits to suggesting the next line of code.
+* Produce code faster
+* Reduce typos
+* Increase correctness
+
+The two first benefits are rather obvious, but incresing correctness may need some explanation. 
+
+In the example above, a new developer may not know, that the return value from Path.GetDirectoryName may be null and therefore may forget to check for null. If the new developer is using Predictive Code Suggestions, he will be made aware, that a call to GetDirectionName is usually followed by check for null. 
+
+In this way the developer can learn the coding patterns in the solution.
+
 <h3>Features</h3>
+Predictive Code Suggestions offers 3 types of suggestions; pre-defined, manual and automatic.
 
 <h4>Predefined suggestions</h4>
 Predictive Code Suggestions comes with a number of predefined suggestions.
@@ -32,7 +44,7 @@ Predictive Code Suggestions comes with a number of predefined suggestions.
 * Suggests a `foreach` statement, if the caret is after a variable declaration of type Enumerable.
 * Suggests a check for null, if the caret is a after a variable declaration where the variable might be null, typically if a variable is initialized by a function call. This works well with Code Annotation attributes.
 
-<h4>Live templates</h4>
+<h4>Manual suggestions</h4>
 Predictive Code Suggestions allows you to create your own suggestions by providing highly context-aware Live Templates.
 
 When you open the the ReSharper Generate popup inside a text editor, you will see a new option at the very bottom: "Create live template". Selecting this option opens a new menu, where you select the context you want to use.
@@ -59,7 +71,10 @@ You may use some of the predefined macros offered by Predictive Code Suggestions
 
 When you open Generate popup menu, you will see your context-aware Live Template at the very top.
 
-<h4>Suggestions analysis</h4>
+<h4>Automatic suggestions</h4>
+
+<b>Please notice that automatic suggestions may impact performance when working with huge solutions or projects. And by huge projects, we mean millions and millions of lines of code.</b>
+
 Predictive Code Suggestions also analyzes your code in the background to determine common patterns. When a pattern is detected, Predictive Code Suggestions offers the suggestions as a Live Template in the Generate popup menu.
 
 Over time Predictive Code Suggestions "learn" how you write code and is able to suggest Live Templates, that are automatically generated.
@@ -75,5 +90,9 @@ The Options page allows you to tweak how the suggestions are generated.
 * Number of occurances determines the minimum number of occurances needed before a suggestion is generated.
 * Minimum percentage determines how big a percentage the statements must have before a suggestion is generated.
 
-Please notice that Suggestion Analysis may impact performance when working with huge solutions or projects.
+<img src="http://vsplugins.sitecore.net/downloads/github/pcs3.png" alt="" />
 
+<h4>Text Editor Integration</h4>
+Predictive Code Suggestions are integrated in the ReSharper Generate popup menu, but you may also choose to integrate it into the ReSharper Complete Statement action.
+
+This provides a very slick development experience, as you can generate a lot of code by just pressing `Ctrl+Shift+Enter` and selecting code from the popup menu.
