@@ -66,4 +66,14 @@ Over time Predictive Code Suggestions "learn" how you write code and is able to 
 
 The image below shows a part of Options page for Predictive Code Suggestions. The highlighted line shows that in my code, there are 74 call to `System.Collections.Generics.List.Add` and of these 74 calls, 26% are followed by a `return` statement. If another call to the `Add` is made, there is a good chance, it should be followed by a `return` statement.
 
+<img src="http://vsplugins.sitecore.net/downloads/github/pcs2.png" alt="" />
+
+As mentioned, the analysis takes place in the background, but you can trigger an analysis of the entire solution either from the Options page or from the ReSharper main menu. When a file is saved, the analysis engine processes the file.
+
+The Options page allows you to tweak how the suggestions are generated.
+* Max number of statements per statements limits the number of suggestions, picking the suggestions with highest probability.
+* Number of occurances determines the minimum number of occurances needed before a suggestion is generated.
+* Minimum percentage determines how big a percentage the statements must have before a suggestion is generated.
+
+Please notice that Suggestion Analysis may impact performance when working with huge solutions or projects.
 
