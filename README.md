@@ -53,4 +53,17 @@ Predictive Code Suggestions offers these contexts:
 * Switch case
 * Class, struct, interface or enum
 
-After selecting the context, the ReSharper Live Template editor opens.
+After selecting the context, the ReSharper Live Template editor opens. You will notice that the Shortcut field starts with "Do not change". This is so that Predictive Code Suggestions may recognize your context-aware Live Templates from standard Live Templates. As the text suggests, you should not change the Shortcut.
+
+You may use some of the predefined macros offered by Predictive Code Suggestions, but remember to delete the comments before saving the Live Template.
+
+When you open Generate popup menu, you will see your context-aware Live Template at the very top.
+
+<h4>Suggestions analysis</h4>
+Predictive Code Suggestions also analyzes your code in the background to determine common patterns. When a pattern is detected, Predictive Code Suggestions offers the suggestions as a Live Template in the Generate popup menu.
+
+Over time Predictive Code Suggestions "learn" how you write code and is able to suggest Live Templates, that are automatically generated.
+
+The image below shows a part of Options page for Predictive Code Suggestions. The highlighted line shows that in my code, there are 74 call to `System.Collections.Generics.List.Add` and of these 74 calls, 26% are followed by a `return` statement. If another call to the `Add` is made, there is a good chance, it should be followed by a `return` statement.
+
+
