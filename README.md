@@ -92,7 +92,7 @@ The Options page allows you to tweak how the suggestions are generated.
 * Number of occurances determines the minimum number of occurances needed before a suggestion is generated.
 * Minimum percentage determines how big a percentage the suggestion must have before being generated.
 
-<img src="http://vsplugins.sitecore.net/downloads/github/pcs3.png" alt="" /> 
+<img src="http://vsplugins.sitecore.net/downloads/github/pcs3.png" alt="" />
 
 <h4>Text Editor Integration</h4>
 Predictive Code Suggestions are integrated in the ReSharper Generate popup menu, but you may also choose to integrate it into the ReSharper Complete Statement action.
