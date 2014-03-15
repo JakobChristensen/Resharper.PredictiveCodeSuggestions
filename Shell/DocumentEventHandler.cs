@@ -61,7 +61,17 @@ namespace PredictiveCodeSuggestions.Shell
           return;
         }
 
-        var folder = Path.GetDirectoryName(project.Location.ToString()) ?? string.Empty;
+
+        string folder;
+        try
+        {
+          folder = Path.GetDirectoryName(project.Location.ToString()) ?? string.Empty;
+        }
+        catch
+        {
+          return;
+        }
+
         if (fileName.StartsWith(folder, StringComparison.InvariantCultureIgnoreCase))
         {
           fileName = fileName.Substring(folder.Length);
