@@ -46,7 +46,7 @@ namespace PredictiveCodeSuggestions.SmartGenerators.Scopes
         variableType = "(unknown variable)";
       }
 
-      return string.Format("After variable of type \"{0}\"", variableType);
+      return string.Format("Before variable of type \"{0}\"", variableType);
     }
 
     #endregion

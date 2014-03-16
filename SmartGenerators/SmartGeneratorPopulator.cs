@@ -11,6 +11,7 @@ namespace PredictiveCodeSuggestions.SmartGenerators
 {
   using System;
   using System.Collections.Generic;
+  using System.IO;
   using System.Linq;
   using JetBrains.Annotations;
   using PredictiveCodeSuggestions.AutoTemplates;
@@ -47,7 +48,7 @@ namespace PredictiveCodeSuggestions.SmartGenerators
       {
         yield return new LiveTemplateGenerator(template);
       }
-      
+
       foreach (var s in scopes)
       {
         var scope = s;

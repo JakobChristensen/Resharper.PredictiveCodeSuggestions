@@ -16,7 +16,6 @@ namespace PredictiveCodeSuggestions.Generators
   using JetBrains.ReSharper.Psi.CSharp;
   using JetBrains.ReSharper.Psi.CSharp.Tree;
   using JetBrains.ReSharper.Psi.Tree;
-  using JetBrains.ReSharper.Psi.Util;
   using PredictiveCodeSuggestions.Shell;
 
   /// <summary>Defines the <see cref="ReturnPopulator"/> class.</summary>
@@ -133,10 +132,12 @@ namespace PredictiveCodeSuggestions.Generators
       }
 
       var typeName = returnType.GetLongPresentableName(CSharpLanguage.Instance);
+      /*
       if (typeName != "bool" && typeName != "System.Boolean" && !returnType.IsVoid() && !returnType.IsReferenceType())
       {
         return null;
       }
+      */
 
       return new Model
       {
