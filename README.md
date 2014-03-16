@@ -2,6 +2,8 @@ Predictive Code Suggestions
 ===========================
 Predictive Code Suggestions is a plugin for JetBrains ReSharper, that helps you produce code by suggesting the next line of code.
 
+<a href="https://www.youtube.com/watch?v=gGElb01GAsI" target="_blank">Watch the demo on YouTube</a>
+
 <h3>Idea</h3>
 When writing code there are often certain patterns to how the code is constructed. Certain statements are often followed by certain other statements, or function calls are followed by certain checks.
 
