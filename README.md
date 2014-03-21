@@ -104,4 +104,4 @@ Predictive Code Suggestions are integrated in the ReSharper Generate popup menu,
 This provides a very slick development experience, as you can generate a lot of code by just pressing `Ctrl+Shift+Enter` and selecting code from the popup menu.
 
 <h3>Patent</h3>
-Sitecore A/S holds a patent for Predictive Code Suggestions.
+Patent pending by Sitecore A/S.
