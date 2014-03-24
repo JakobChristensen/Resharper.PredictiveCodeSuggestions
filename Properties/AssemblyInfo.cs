@@ -22,7 +22,7 @@ using JetBrains.Application.PluginSupport;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.2.0")]
+[assembly: AssemblyFileVersion("1.1.1.0")]
 [assembly: ActionsXml("AutoTemplates.Actions.xml")] 
 
 // The following information is displayed by ReSharper in the Plugins dialog
