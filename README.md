@@ -1,3 +1,5 @@
+*** DISCONTINUED ***
+
 Predictive Code Suggestions
 ===========================
 Predictive Code Suggestions is a plugin for JetBrains ReSharper, that helps you produce code by suggesting the next line of code.
@@ -102,6 +104,3 @@ The Options page allows you to tweak how the suggestions are generated.
 Predictive Code Suggestions are integrated in the ReSharper Generate popup menu, but you may also choose to integrate it into the ReSharper Complete Statement action.
 
 This provides a very slick development experience, as you can generate a lot of code by just pressing `Ctrl+Shift+Enter` and selecting code from the popup menu.
-
-<h3>Patent</h3>
-Patent pending by Sitecore A/S.
